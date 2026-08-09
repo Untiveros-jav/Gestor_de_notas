@@ -1,4 +1,6 @@
+import Link from "next/link"
 import { getNotes } from "../services/notes"
+
 
 
 const Notes = () => {
@@ -10,7 +12,7 @@ const Notes = () => {
                 {
                     notes.map(note => (
                         <li key={note.id}>
-                            {note.content}
+                            <Link href={`/notes/${note.id}`}>{note.content}</Link>
                             {note.important && <strong>(important)</strong>} 
                         </li>
                     ))

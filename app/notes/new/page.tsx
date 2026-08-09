@@ -8,13 +8,13 @@ const NewNote = () => {
             <form action={createNote}>
                 <div>
                     <label>
-                        Content
+                        Content: {" "}
                         <input type="text" name="content" required />
                     </label>
                 </div>
                 <div>
                     <label>
-                        <input type="checkbox" name="important" required />
+                        <input type="checkbox" name="important" />
                         Important
                     </label>
                 </div>
