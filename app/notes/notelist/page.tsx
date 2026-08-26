@@ -10,7 +10,7 @@ type Note = {
     important: boolean
 }
 
-const NoteList = ({ notes } : { notes: Note[]}) => {
+const NoteList = ( { notes }  : { notes: Note[]}) => {
     const [showImportant, setShowImportant] = useState(false)
     const notesToShow = showImportant ? notes.filter((note) => note.important) : notes
     return(
