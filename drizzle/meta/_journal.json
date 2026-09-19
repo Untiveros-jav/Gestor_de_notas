@@ -8,6 +8,34 @@
       "when": 1789576610396,
       "tag": "0000_gorgeous_dazzler",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1789784900699,
+      "tag": "0001_new_grim_reaper",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1789787438927,
+      "tag": "0002_whole_toad_men",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1789789448224,
+      "tag": "0003_free_doorman",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1789789629324,
+      "tag": "0004_common_cardiac",
+      "breakpoints": true
     }
   ]
 }
