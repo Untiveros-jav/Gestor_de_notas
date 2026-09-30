@@ -1,17 +1,15 @@
-import { getNoteById } from "@/app/services/notes";
-import { getUserById, getNotesByUserId } from "@/app/services/users";
+import { getUserWithNotes } from "@/app/services/users";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 const UserPage = async ({ params } : { params: Promise<{ id: string }>}) => {
 
     const { id } = await params
-    const user = await getUserById(Number(id))
+    const user = await getUserWithNotes(Number(id))
     
     if (!user) {
         notFound()
     }
-    const notes = await getNotesByUserId(Number(user.id))
     
 
 
@@ -21,7 +19,7 @@ const UserPage = async ({ params } : { params: Promise<{ id: string }>}) => {
             <p>Username: {user.username}</p>
             <h3>Notes</h3>
             <ul>
-                {notes.map((note)=>(
+                {user.notes.map((note)=>(
                     <li key={note.id}>
                         <Link href={`/notes/${note.id}`}>{note.content}</Link>
                         {note.important && <strong>(important)</strong>}
