@@ -4,6 +4,7 @@ import { redirect } from "next/navigation"
 import bcrypt from "bcryptjs"
 import { db } from "@/db"
 import { users } from "@/db/schema"
+import { revalidatePath } from "next/cache"
 
 export const registerUser = async (formData: FormData) => {
     const username = (formData.get("username") as string)?.trim()
@@ -17,5 +18,7 @@ export const registerUser = async (formData: FormData) => {
         name,
         passwordHash
     })
+    
+    revalidatePath("/login")
     redirect("/login")
 }
